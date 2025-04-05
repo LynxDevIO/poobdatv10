@@ -2,12 +2,12 @@ package dev.phil.poobdatv10.model;
 
 public class Contato {
 
-    private String nome;
-    private String sobrenome;
-    private String email;
-    private String telefone;
-    private String assunto;
-    private String mensagem;
+    private final String nome;
+    private final String sobrenome;
+    private final String email;
+    private final String telefone;
+    private final String assunto;
+    private final String mensagem;
 
     private Contato(ContatoBuilder builder) {
         this.nome = builder.nome;
@@ -18,53 +18,29 @@ public class Contato {
         this.mensagem = builder.mensagem;
     }
 
-    // Getters e Setters
+    // Getters
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getSobrenome() {
         return sobrenome;
     }
 
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
     public String getAssunto() {
         return assunto;
     }
 
-    public void setAssunto(String assunto) {
-        this.assunto = assunto;
-    }
-
     public String getMensagem() {
         return mensagem;
-    }
-
-    public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
     }
 
     // Classe Interna Construtora
@@ -77,13 +53,8 @@ public class Contato {
         private String assunto;
         private String mensagem;
 
-        public ContatoBuilder(String nome, String sobrenome, String email, String telefone, String assunto, String mensagem) {
-            this.nome = nome;
-            this.sobrenome = sobrenome;
-            this.email = email;
-            this.telefone = telefone;
-            this.assunto = assunto;
-            this.mensagem = mensagem;
+        public ContatoBuilder() {
+            // vazio
         }
 
         public ContatoBuilder setNome(String nome) {
@@ -119,7 +90,5 @@ public class Contato {
         public Contato build() {
             return new Contato(this);
         }
-
     }
-
 }
